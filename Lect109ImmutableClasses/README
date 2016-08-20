@@ -1,0 +1,24 @@
+Making our classes immutable, means that they can't be changed once created.
+Using immutable classes is a great way to increase encapsulation and to reduce errors
+if we're going to allow external code to modify our class instances. 
+
+1. One simple techinque we can see it in Location class, in the getter getExits(), where
+rather than returning the exits objec directly which would expose it to the possibility
+of being changed externaly, we created a new HashMap  object that contains all the elements
+of exits and return that so the external code that needs to use the exits to do so there's 
+no change of changing our internal map as it is returned a copy of it.
+
+2. We also use "private final" fields, meaning that once set, they can't be changed.
+
+3. Not providing setters for the id and description fields.
+
+4. If class field or element of a immutable class like a list or a map is to be set only once,
+and never changed again then what it needs to be done and where it needs to be set is in 
+the constructor. Ergo, in this particular case we would need the addExit method any more.
+
+Depending on the functionalities a class should have, it might not be possible to use these
+techniques, but we should as many of them as possible. Oracle give its suggestions, we can
+check them out here:
+
+https://docs.oracle.com/javase/tutorial/essential/concurrency/imstrat.html
+
