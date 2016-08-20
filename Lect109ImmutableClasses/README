@@ -2,7 +2,7 @@ Making our classes immutable, means that they can't be changed once created.
 Using immutable classes is a great way to increase encapsulation and to reduce errors
 if we're going to allow external code to modify our class instances. 
 
-1. One simple techinque we can see it in Location class, in the getter getExits(), where
+1. One simple technique we can see it in Location class, in the getter getExits(), where
 rather than returning the exits objec directly which would expose it to the possibility
 of being changed externaly, we created a new HashMap  object that contains all the elements
 of exits and return that so the external code that needs to use the exits to do so there's 
@@ -21,4 +21,18 @@ techniques, but we should as many of them as possible. Oracle give its suggestio
 check them out here:
 
 https://docs.oracle.com/javase/tutorial/essential/concurrency/imstrat.html
+
+What exactly is wrong with allowing a class to be extended?
+
+In certain cases allowing instances of a class to be extended could cause problems,
+take for instance our locations map. If we allow Location to be extended, subclasses of
+it could be passed as values which could be useful, but if we were using it as key 
+we would want to ensure that only completely immutable objects would be used as the keys.
+Then we have to prevent some classes over which we have no control to be used.
+
+Even if a full immutable class is not widely used its techniques in different combinations
+are  very useful.
+
+
+
 

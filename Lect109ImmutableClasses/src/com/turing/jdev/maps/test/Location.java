@@ -14,7 +14,12 @@ public class Location {
     public Location(int locationID, String description, Map<String, Integer> exits) {
         this.locationID = locationID;
         this.description = description;
-        this.exits = new HashMap<String, Integer>(exits);
+        // the constructor would crash if we pass a null value in the map parameter
+        if(exits != null){
+        	this.exits = new HashMap<String, Integer>(exits);
+        }else{
+        	this.exits = new HashMap<String, Integer>();	// because being a final field it needs to be initialized 
+        }
         this.exits.put("Q", 0);
     }
 
