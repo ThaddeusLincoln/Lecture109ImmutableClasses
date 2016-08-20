@@ -33,6 +33,9 @@ Then we have to prevent some classes over which we have no control to be used.
 Even if a full immutable class is not widely used its techniques in different combinations
 are  very useful.
 
+A list is an ordered collection of items that can be can contain duplicated. Ordered meaning,
+that list maintain the insertion order.
+
 
 
 
